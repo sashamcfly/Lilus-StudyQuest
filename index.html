@@ -359,6 +359,20 @@
 <div class="toast" id="toast"></div>
 
 <script>
+  /* ============================================================
+   ✉️ DEINE UPDATE-NACHRICHT AN LILU
+   ------------------------------------------------------------
+   Hier trägst du bei JEDEM Update eine kleine Nachricht ein.
+   "id" muss sich bei jedem neuen Update ändern (z.B. "u1", "u2", ...),
+   sonst zeigt die App die Nachricht kein zweites Mal an.
+   Leer lassen ("") = kein Popup.
+   ============================================================ */
+const UPDATE_MESSAGE = {
+  id: "",
+  emoji: "💌",
+  title: "Update für dich!",
+  text: "Hey du fleißige, Teil 2 von deiner ersten Story ist jetzt verfügbar! Frohes Questen! :)"
+};
 /* ============================================================
    LILUS QUEST-APP — Story-Daten
    Hier fügst du später "Teil 2", "Teil 3" usw. hinzu.
@@ -421,7 +435,7 @@ const STORIES = [
           {speaker:"Sasha", portrait:"🐱", text:"Ich glaub, ich hab mich verirrt. Kannst du mir den Weg zu deinem Herzen zeigen?"},
           {speaker:"", portrait:"🧭", text:"Du bist too stunned to speak und schaust auf deinen Kompass.", narr:true},
           {speaker:"Sasha", portrait:"🐱", text:"Sieht so aus, als wärst du gerade selbst auf der Suche nach etwas."},
-          {speaker:"Sasha", portrait:"🐱", text:"...du bist die Auserwählte, die Schnurrstadt retten wird! Wow — das ist soooo cooool!"},
+          {speaker:"Sasha", portrait:"🐱", text:"...du bist die Auserwählte, die Schnurrstadt retten wird! Wow - das ist soooo cooool!"},
           {speaker:"Sasha", portrait:"🐱", text:"(räuspert sich verlegen) Wenn du uns alle gerettet hast, würde ich gerne mit dir eine Schüssel Hafermilch trinken gehen."},
           {speaker:"Sasha", portrait:"🐱", text:"Bis dahin viel Erfolg."},
           {speaker:"", portrait:"💜", text:"Sasha kommt näher und reibt ihren weichen Kopf liebevoll an deinen. Danach verschwindet sie wieder im Gebüsch. Du spürst eine neue Energie in dir hochkochen und läufst motiviert los, schneller als nie zuvor.", narr:true}
@@ -472,7 +486,8 @@ function defaultState(){
     journal: [],
     dailyGoal: 3,
     todayDate: todayStr(),
-    todayCount: 0
+    todayCount: 0,
+    lastSeenUpdate: ""
   };
 }
 function todayStr(){ return new Date().toISOString().slice(0,10); }
@@ -827,6 +842,20 @@ function hideModal(){
   document.getElementById("modalOverlay").classList.remove("show");
 }
 
+function showUpdateNote(onClose){
+  document.getElementById("modalEmoji").textContent = UPDATE_MESSAGE.emoji || "💌";
+  document.getElementById("modalTitle").textContent = UPDATE_MESSAGE.title || "Update für dich!";
+  document.getElementById("modalText").textContent = UPDATE_MESSAGE.text || "";
+  document.getElementById("modalBtn").textContent = "Danke! 💜";
+  document.getElementById("modalBtn").onclick = () => {
+    hideModal();
+    state.lastSeenUpdate = UPDATE_MESSAGE.id;
+    saveState();
+    if(onClose) onClose();
+  };
+  document.getElementById("modalOverlay").classList.add("show");
+}
+
 function startStory(idx){
   state.activeStory = idx;
   state.stepIndex = 0;
@@ -856,8 +885,17 @@ function showToast(msg){
    ============================================================ */
 function init(){
   render();
-  if(!state.introSeen.includes(state.activeStory) && STORIES[state.activeStory]){
-    startStory(state.activeStory);
+  function continueInit(){
+    if(!state.introSeen.includes(state.activeStory) && STORIES[state.activeStory]){
+      startStory(state.activeStory);
+    } else {
+      maybeOfferNextStory();
+    }
+  }
+  if(UPDATE_MESSAGE.id && state.lastSeenUpdate !== UPDATE_MESSAGE.id){
+    showUpdateNote(continueInit);
+  } else {
+    continueInit();
   }
 }
 init();
