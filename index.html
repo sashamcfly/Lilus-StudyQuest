@@ -368,7 +368,7 @@
    Leer lassen ("") = kein Popup.
    ============================================================ */
 const UPDATE_MESSAGE = {
-  id: "",
+  id: "teil2",
   emoji: "💌",
   title: "Update für dich!",
   text: "Hey du fleißige, Teil 2 von deiner ersten Story ist jetzt verfügbar! Frohes Questen! :)"
@@ -454,6 +454,77 @@ const STORIES = [
       }
     ],
     ending: "Du hast das Schwert des Lichts gefunden! ✨ Schnurrstadt hat eine Chance. Aber die dunkle Macht schläft nicht... Halte Ausschau nach dem nächsten Update."
+  },
+  {
+    id: 1,
+    title: "Teil 2: Die Saphirsee",
+    intro: {
+      speaker: "Onyx",
+      portrait: "✨🐈",
+      lines: [
+        "Gut gemacht! Du hast das Schwert des Lichts gefunden. Ich wusste, ich kann auf dich zählen.",
+        "Jetzt musst du nur noch die dunkle Macht besiegen und uns alle vor dem Untergang bewahren… Aber no pressure.",
+        "Sie breitet sich über der Saphirsee aus. Aber bevor du sie bekämpfen kannst, musst du dich vorbereiten. Kampfzwergin Zwick hat bestimmt ein paar Tipps für dich.",
+        "Aber pass auf, die ist jetzt in den Wechseljahren und noch reizbarer als sonst… und mittlerweile eher Gartenzwerg als Kampfzwerg."
+      ]
+    },
+    steps: [
+      {
+        quest: "Gelange zur heiligen Vierfelsigkeit und finde Zwick.",
+        dialogue: [
+          {speaker:"", portrait:"🗿", text:"Du stehst vor der heiligen Vierfelsigkeit. Es sind vier große Katzenköpfe aus Stein gemeißelt - die Gründermütter von Schnurrstadt.", narr:true},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Wer stört mich hier bei der Gartenarbeit?"},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Ich soll dir helfen? Sehe ich aus wie eine Katzensitterin oder was? Außerdem bin ich in Rente."}
+        ]
+      },
+      {
+        quest: "Beruhige Zwick, schenke ihr Katzenminze für ihren Garten und erläutere ihr deine Mission.",
+        dialogue: [
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Versuchst du mich hier gerade zu bestechen? Na gut, es funktioniert. Ich helfe dir."},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Ich würde den Job ja auch selbst erledigen, aber meine Bandscheiben machen das nicht mehr mit."},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Du wirst hier trainieren, unter den Augen der Gründermütter. Wenn sie uns ein Zeichen geben, darfst du deine Reise fortsetzen."},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Also los, pack dein Schwert aus und zeig mir, was du kannst!"}
+        ]
+      },
+      {
+        quest: "Trainiere mit Zwick, bis du gut mit deinem neuen (naja, eher gethrifteten) Schwert umgehen kannst.",
+        dialogue: [
+          {speaker:"", portrait:"✨", text:"Die Augen der Gründermütter leuchten grün auf und um dein Schwert herum bilden sich glitzernde Leuchtpartikel.", narr:true},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Du hast hart trainiert und hast jetzt eine reale Chance gegen die dunkle Macht."},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Die Gründermütter geben dir wortwörtlich grünes Licht zum Weiterziehen."},
+          {speaker:"Zwick", portrait:"🧝‍♀️", text:"Komm mich mal besuchen, wenn du heimkehrst, ja? Werd' jetzt aber nicht sentimental!"}
+        ]
+      },
+      {
+        quest: "Ziehe weiter Richtung Saphirsee, tapfere Kriegerin!",
+        dialogue: [
+          {speaker:"", portrait:"🐈‍⬛", text:"Dein Magen knurrt, denn das harte Training hat dich hungrig gemacht. Die Schokokekse hast du längst aufgegessen. Ein bisschen hangry schaust du dich nach etwas Essbarem um.", narr:true},
+          {speaker:"", portrait:"🐭", text:"Eine Maus rennt an dir vorbei. Aber du hast kein Interesse, denn du lebst bereits seit 7 Jahren vegan.", narr:true},
+          {speaker:"", portrait:"👃", text:"Doch da liegt der Geruch von etwas frischem, leckerem und kräftestärkendem in der Luft. Allerdings kommt der Duft aus einer ganz anderen Richtung und du würdest vom Weg abkommen.", narr:true}
+        ]
+      },
+      {
+        quest: "Finde was zu Essen, damit du genug Energie hast, um weiterzumachen.",
+        dialogue: [
+          {speaker:"", portrait:"🍞", text:"Der Geruch führt dich zu…", narr:true},
+          {speaker:"Bernd das Brot", portrait:"🍞", text:"Mist. Willst du Brot?"},
+          {speaker:"Bernd das Brot", portrait:"🍞", text:"Ich habe Roggenbrot, Krustenbrot, Mehrkornbrot, Mischbrot, Weißbrot, Toastbrot, Dinkelbrot, Knäckebrot… Seufz."},
+          {speaker:"Bernd das Brot", portrait:"🍞", text:"Hier kommen ständig viele hungrige Reisende vorbei. Und da ich schon die ein oder andere Attacke abwehren musste, habe ich aus reinem Selbstschutz angefangen, Brot zu backen."},
+          {speaker:"Bernd das Brot", portrait:"🍞", text:"Verstehst du? So wird das Zeug gegessen… und nicht ich!"},
+          {speaker:"Bernd das Brot", portrait:"🍞", text:"Mein Leben ist die Hölle."},
+          {speaker:"", portrait:"🐈‍⬛", text:"Verwirrt aber dankbar nimmst du dir Toastbrot. Du bedankst dich und gehst schnell wieder. Was ein Fiebertraum.", narr:true}
+        ]
+      },
+      {
+        quest: "Stärke dich mit dem Brot von Bernd und finde zurück zum Weg.",
+        dialogue: [
+          {speaker:"", portrait:"🐈‍⬛", text:"Du hast zurück zum Weg gefunden und wanderst zufrieden und mit vollem Magen weiter.", narr:true},
+          {speaker:"", portrait:"💤", text:"Nach ein paar Metern wirst du müde. Du kannst gar nicht viel tun, bis dich das Foodcoma überkommt und du dich unter einem Baum zu einem süßen schwarzen Flauschball zusammenrollst.", narr:true},
+          {speaker:"", portrait:"❓", text:"Doch... Was ist das denn?", narr:true}
+        ]
+      }
+    ],
+    ending: "Du erwachst mit einem Kribbeln im Fell... etwas oder jemand ist ganz in deiner Nähe. 🐾 Die Reise geht weiter. Halte Ausschau nach dem nächsten Update."
   }
   /* Beispiel für Teil 2 (später hier ergänzen, dann Datei neu hochladen/veröffentlichen):
   {
@@ -471,8 +542,8 @@ const STORIES = [
    ============================================================ */
 const STORAGE_KEY = "lilu_quest_state_v1";
 const CHEER_MESSAGES = [
-  "Yay! Super gemacht! 🎉","Du rockst das! 💪","Ein Schritt weiter! ✨",
-  "Onyx ist stolz auf dich! 🐾","Geschafft! Weiter so! 🌟","Toll gemacht! 💜"
+  "Yay! 🎉","You got this! 💪","Hell yeah! ✨",
+  "Onyx ist stolz auf dich! 🐾","You did it! 🌟","You are doing amazing! 💜"
 ];
 
 function defaultState(){
