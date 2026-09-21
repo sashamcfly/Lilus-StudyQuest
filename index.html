@@ -1047,7 +1047,9 @@ function showEndingModal(story){
   };
   document.getElementById("modalOverlay").classList.add("show");
 }
-
+function hideModal(){
+  document.getElementById("modalOverlay").classList.remove("show");
+}
 function showUpdateNote(onClose){
   document.getElementById("modalEmoji").textContent = UPDATE_MESSAGE.emoji || "💌";
   document.getElementById("modalTitle").textContent = UPDATE_MESSAGE.title || "Update für dich!";
