@@ -368,10 +368,10 @@
    Leer lassen ("") = kein Popup.
    ============================================================ */
 const UPDATE_MESSAGE = {
-  id: "teil2",
+  id: "teil3",
   emoji: "💌",
   title: "Update für dich!",
-  text: "Hey du fleißige, Teil 2 von deiner ersten Story ist jetzt verfügbar! Frohes Questen! :)"
+  text: "Hello pretty, du machst das ganz toll. Hier ist der nächste Teil für dich. Ich schwöre, ich bin nicht auf Drogen. Galigrü!"
 };
 /* ============================================================
    LILUS QUEST-APP — Story-Daten
@@ -525,7 +525,150 @@ const STORIES = [
       }
     ],
     ending: "Du erwachst mit einem Kribbeln im Fell... etwas oder jemand ist ganz in deiner Nähe. 🐾 Die Reise geht weiter. Halte Ausschau nach dem nächsten Update."
+  },
+    {
+    id: 2,
+    title: "Teil 3: Der Kampf gegen die dunkle Macht",
+    intro: {
+      speaker: "Wermöwe",
+      portrait: "🦅",
+      lines: [
+        "Raaargh! Raaaargh!",
+        "Du riechst nach Katze und... Brot.",
+        "Hast du Brot?",
+        "Nein?",
+        "Dann muss ich jetzt wohl dich fressen."
+      ]
+    },
+    steps: [
+      {
+        quest: "Fliehe vor der Wermöwe.",
+        dialogue: [
+          {speaker:"", portrait:"💨", text:"Du rennst los, so schnell wie deine Pfoten dich tragen.", narr:true},
+          {speaker:"Wermöwe", portrait:"🦅", text:"Raaaargh! Du entkommst mir nicht!"},
+          {speaker:"", portrait:"💡", text:"Dir fällt ein, dass du ja gestärkt und gut trainiert bist und sogar ein fancy Schwert dabei hast.", narr:true},
+          {speaker:"", portrait:"🤔", text:"Warum läufst du eigentlich vor der Möwe weg?", narr:true}
+        ]
+      },
+      {
+        quest: "Stell dich der Wermöwe und fordere sie zum Kampf heraus.",
+        dialogue: [
+          {speaker:"", portrait:"🐈‍⬛", text:"Du bremst abrupt ab und zückst dein Schwert.", narr:true},
+          {speaker:"", portrait:"⚔️", text:"Wow, siehst du cool damit aus.", narr:true},
+          {speaker:"", portrait:"🦅", text:"Die wilde Wermöwe taucht auf. Los, Lilu!"},
+          {speaker:"", portrait:"🦅", text:"Die Wermöwe setzt Flügelschlag ein."},
+          {speaker:"", portrait:"💥", text:"Das ist nicht sehr effektiv..."},
+          {speaker:"", portrait:"🐈‍⬛", text:"Lilu setzt Kratzer ein!"},
+          {speaker:"", portrait:"💥", text:"Das ist sehr effektiv!"},
+          {speaker:"", portrait:"🦅", text:"Wermöwe setzt Schutzschild ein!"},
+          {speaker:"", portrait:"🛡️", text:"Wermöwe schützt sich selbst!"},
+          {speaker:"", portrait:"🐈‍⬛", text:"Lilu setzt Donnerschlag ein!"},
+          {speaker:"", portrait:"💨", text:"Die Attacke ging daneben..."},
+          {speaker:"", portrait:"🦅", text:"Wermöwe setzt Superschall ein!"},
+          {speaker:"", portrait:"💫", text:"Lilu wurde verwirrt!"}
+        ]
+      },
+      {
+        quest: "Kekse backen wäre dir eigentlich viel lieber... Warum tragen Aliens keine Hüte? Leck Eier! Wo sind eigentlich deine Nippelpiercings? Und wie spät ist es, wenn es draußen kalt ist? Überwinde deine Verwirrung!",
+        dialogue: [
+          {speaker:"", portrait:"✨", text:"Lilu ist nicht mehr verwirrt!"},
+          {speaker:"", portrait:"🐈‍⬛", text:"Lilu setzt Funkenflug ein!"},
+          {speaker:"", portrait:"🎯", text:"Ein Volltreffer!"},
+          {speaker:"", portrait:"💥", text:"Das ist sehr effektiv!"},
+          {speaker:"", portrait:"🦅", text:"Die wilde Wermöwe wurde besiegt!"},
+          {speaker:"", portrait:"🏆", text:"Du hast deinen ersten Kampf gemeistert, herzlichen Glückwunsch!"},
+          {speaker:"", portrait:"🐈‍⬛", text:"Voller Euphorie setzt du deinen Weg fort. Jetzt kann ja nichts mehr schiefgehen.", narr:true}
+        ]
+      },
+      {
+        quest: "Der Himmel verdunkelt sich mit jedem Meter, den du weiterläufst. Du kommst der dunklen Macht immer näher.",
+        dialogue: [
+          {speaker:"Fee", portrait:"🧚", text:"Hatschie!"},
+          {speaker:"", portrait:"❓", text:"Fragend schaust du dich um.", narr:true},
+          {speaker:"Fee", portrait:"🧚", text:"Immer diese Streuner*innen."},
+          {speaker:"Fee", portrait:"🧚", text:"Schnief."},
+          {speaker:"Fee", portrait:"🧚", text:"Ich sollte echt mal überlegen, umzuziehen."},
+          {speaker:"Fee", portrait:"🧚", text:"Ich halte das langsam nicht mehr aus."},
+          {speaker:"Fee", portrait:"🧚", text:"Hatschie!"},
+          {speaker:"", portrait:"🤯", text:"Du fragst dich, ob du mittlerweile durchdrehst und anfängst, Stimmen zu hören.", narr:true},
+          {speaker:"Fee", portrait:"🧚", text:"Ich meine dich, du schwarze... schöne... weiche Katze!"},
+          {speaker:"", portrait:"🧚", text:"Endlich siehst du die winzig kleine Fee, die dir mit ihrer winzig kleinen Hand übers weiche Fell streicht.", narr:true},
+          {speaker:"Fee", portrait:"🧚", text:"Ich bin allergisch gegen Katzen, aber ihr seid so süß. Hatschie!"},
+          {speaker:"", portrait:"✨", text:"Eine Portion Glitzer, die aus ihrer Nase kommt, landet auf deiner Nase.", narr:true}
+        ]
+      },
+      {
+        quest: "Reiche der Fee ein Taschentuch und empfehle ihr eine gute Desensibilisierungsklinik.",
+        dialogue: [
+          {speaker:"Fee", portrait:"🧚", text:"Du bist so nett und hilfsbereit! Als Dank möchte ich dir etwas schenken."},
+          {speaker:"Fee", portrait:"🧚", text:"Ich habe gemerkt, ich bin einfach kein gutes Elternteil. Viel Glück."},
+          {speaker:"", portrait:"💎", text:"Sie schenkt dir einen wunderschön türkis glitzernden Kieselstein mit Trennungsängsten. Immer, wenn du ihn mehr als einen Meter von dir wegtust, fängt er an zu schluchzen und zu schreien. Na klasse.", narr:true}
+        ]
+      },
+      {
+        quest: "Gelange zur Saphirsee, jetzt wirklich.",
+        dialogue: [
+          {speaker:"", portrait:"🌊", text:"Vor dir taucht endlich die Saphirsee auf, du hast es geschafft.", narr:true},
+          {speaker:"", portrait:"🌑", text:"Doch sie schimmert nicht so schön blau wie sonst, sondern ist schwarz und dickflüssig wie Teer. Deine Haare sträuben sich.", narr:true},
+          {speaker:"", portrait:"⚡", text:"Plötzlich blitzt und donnert es stark und vor dir erscheint ein dämonenartiges Wesen.", narr:true},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Ha! Dass ich nicht lache."},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Onyx hat ein kleines Kätzchen geschickt, um mich zu besiegen?"},
+          {speaker:"", portrait:"😾", text:"Du fauchst die Gestalt an.", narr:true},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Miez miez miez."},
+          {speaker:"", portrait:"🐶", text:"Du probierst es mal mit Bellen.", narr:true},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Okay, das war jetzt schon ein bisschen gruselig."},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Aber ich bin kein alter weißer Mann, den du damit erschrecken kannst."},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Ich werde deine geliebte Stadt mit all ihren Wesen verschlingen!"}
+        ]
+      },
+      {
+        quest: "Besiege die dunkle Macht!",
+        dialogue: [
+          {speaker:"", portrait:"😈", text:"Die Dunkle Macht taucht auf. Los, Lilu!"},
+          {speaker:"", portrait:"😈", text:"Die Dunkle Macht setzt Finsteraura ein!"},
+          {speaker:"", portrait:"💥", text:"Das ist nicht sehr effektiv..."},
+          {speaker:"", portrait:"🐈‍⬛", text:"Lilu setzt Zauberblatt ein!"},
+          {speaker:"", portrait:"💥", text:"Das ist nicht sehr effektiv..."},
+          {speaker:"", portrait:"😈", text:"Die Dunkle Macht setzt Albtraum ein!"},
+          {speaker:"", portrait:"💨", text:"Die Attacke ging daneben!"},
+          {speaker:"", portrait:"🐈‍⬛", text:"Lilu setzt Silberblick ein!"},
+          {speaker:"", portrait:"⬇️", text:"Die Verteidigung von der Dunklen Macht sinkt!"},
+          {speaker:"", portrait:"😈", text:"Die Dunkle Macht setzt Schreckensschrei ein!"},
+          {speaker:"", portrait:"🛡️", text:"Lilu hat den Angriff abgeblockt!"}
+        ]
+      },
+      {
+        quest: "Dieser schreiende Kieselstein geht dir gewaltig auf die Nerven. Kämpfe weiter!",
+        dialogue: [
+          {speaker:"", portrait:"💎", text:"Lilu setzt Kieselstein mit Trennungsängsten ein!"},
+          {speaker:"", portrait:"🎯", text:"Ein Volltreffer!"},
+          {speaker:"", portrait:"💫", text:"Die Dunkle Macht wurde verwirrt!"},
+          {speaker:"", portrait:"💎", text:"Der Kieselstein sieht die Dunkle Macht direkt als neues Elternteil an."},
+          {speaker:"Dunkle Macht", portrait:"😈", text:"Was...? Wie...? Oh, mein Kind! Ich kümmere mich um dich!"},
+          {speaker:"", portrait:"💜", text:"Die Dunkle Macht ist vollkommen in ihrer Elternrolle und zieht sich zurück."},
+          {speaker:"Onyx", portrait:"✨🐈", text:"Du hast Schnurrstadt gerettet! Wir stehen für immer in deiner Schuld."},
+          {speaker:"Onyx", portrait:"✨🐈", text:"Ich habe gehört, dass die Dunkle Macht weit hinter den Edelsteinseen ein neues Leben mit ihrem Kind begonnen hat."},
+          {speaker:"Onyx", portrait:"✨🐈", text:"Du wirst in Lobliedern gepriesen und noch hundert Generationen werden von deiner Tapferkeit schwärmen."},
+          {speaker:"Onyx", portrait:"✨🐈", text:"Bis zum nächsten Abenteuer, Lilu!"}
+        ]
+      }
+    ],
+    ending: "Du hast Schnurrstadt gerettet! 🏆 Die dunkle Macht hat ein neues Leben begonnen und alle Katzen sind in Sicherheit. Bis zum nächsten Abenteuer, Lilu! 🐾"
   }
+
+  /* Beispiel für Teil 4 (später hier ergänzen, dann Datei neu hochladen/veröffentlichen).
+     Vor das neue Objekt gehört ein Komma hinter die schließende Klammer von Teil 3!
+  ,{
+    id: 3,
+    title: "Teil 4: ...",
+    intro: { speaker:"...", portrait:"...", lines:["..."] },
+    steps: [ { quest:"...", dialogue:[ {speaker:"...",portrait:"...",text:"..."} ] } ],
+    ending: "..."
+  }
+  */
+];
+            
+        
   /* Beispiel für Teil 2 (später hier ergänzen, dann Datei neu hochladen/veröffentlichen):
   {
     id: 1,
@@ -837,16 +980,21 @@ function advanceStory(){
   }
   const step = story.steps[state.stepIndex];
   playDialogue(step.dialogue, state.activeStory, () => {
+    let justCompleted = false;
     if(state.stepIndex < story.steps.length - 1){
       state.stepIndex++;
     } else {
       state.completed.push(state.activeStory);
-      saveState();
-      showEndingModal(story);
+      justCompleted = true;
     }
     saveState();
     render();
-    maybeOfferNextStory();
+    if(justCompleted){
+      // Erst das Ende der Geschichte zeigen; die nächste wird beim Klick auf den Button angeboten
+      showEndingModal(story);
+    } else {
+      maybeOfferNextStory();
+    }
   });
 }
 
@@ -905,11 +1053,11 @@ function showEndingModal(story){
   document.getElementById("modalTitle").textContent = story.title.split(":")[0] + " - geschafft!";
   document.getElementById("modalText").textContent = story.ending;
   document.getElementById("modalBtn").textContent = "Weiter so, Lilu!";
-  document.getElementById("modalBtn").onclick = hideModal;
+  document.getElementById("modalBtn").onclick = () => {
+    hideModal();
+    maybeOfferNextStory();
+  };
   document.getElementById("modalOverlay").classList.add("show");
-}
-function hideModal(){
-  document.getElementById("modalOverlay").classList.remove("show");
 }
 
 function showUpdateNote(onClose){
