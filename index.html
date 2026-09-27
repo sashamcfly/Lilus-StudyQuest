@@ -266,13 +266,13 @@
 </style>
 </head>
 <body>
-<h1 class="sr-only">Lilus Lern-Quest — eine Spiel-App, die Lernaufgaben in eine Katzen-Abenteuer-Geschichte verwandelt</h1>
+<h1 class="sr-only">Lilus Lern-Quest — eine Spiel-App, die Lernaufgaben in eine Abenteuer-Geschichte verwandelt</h1>
 
 <div class="app">
 
   <div class="topbar">
     <div class="topbar-row">
-      <div class="cat-avatar">🐈‍⬛</div>
+      <div class="cat-avatar" id="catAvatar">🐈‍⬛</div>
       <div class="greeting">
         <p class="hello" id="greetingText">Hallo</p>
         <p class="name">Lilu</p>
@@ -362,28 +362,34 @@
   /* ============================================================
    ✉️ UPDATE-NACHRICHT AN LILU
    ------------------------------------------------------------
-   Beiei JEDEM Update eine kleine Nachricht eintragen.
+   Bei JEDEM Update eine kleine Nachricht eintragen.
    "id" muss sich bei jedem neuen Update ändern (z.B. "u1", "u2", ...),
    sonst zeigt die App die Nachricht kein zweites Mal an.
    Leer lassen ("") = kein Popup.
    ============================================================ */
 const UPDATE_MESSAGE = {
-  id: "teil3",
-  emoji: "💌",
+  id: "teil4",
+  emoji: "🐸",
   title: "Update für dich!",
-  text: "Hello pretty, du machst das ganz toll. Hier ist der nächste Teil für dich. Ich schwöre, ich bin nicht auf Drogen. Galigrü!"
+  text: "Hey du! Teil 4 ist da – und du bist diesmal kein Kätzchen mehr... Viel Spaß beim Quaken!"
 };
 /* ============================================================
    LILUS QUEST-APP — Story-Daten
-   Hier später "Teil 2", "Teil 3" usw. hinzufügen.
+   Hier später "Teil 5" usw. hinzufügen.
    Einfach ein neues Objekt in das STORIES-Array kopieren.
    (s. Beispielkommentar ganz unten im Array).
+
+   "avatar" ist das Profilbild, das oben links angezeigt wird,
+   solange diese Geschichte die aktive ist. So kann sich Lilu
+   optisch verändern (z.B. Katze -> Frosch), ohne dass alte
+   Kapitel in "Story bisher" verändert werden.
    ============================================================ */
 
 const STORIES = [
   {
     id: 0,
     title: "Teil 1: Die Suche",
+    avatar: "🐈‍⬛",
     intro: {
       speaker: "Onyx",
       portrait: "✨🐈",
@@ -458,6 +464,7 @@ const STORIES = [
   {
     id: 1,
     title: "Teil 2: Auf dem Weg zur Saphirsee",
+    avatar: "🐈‍⬛",
     intro: {
       speaker: "Onyx",
       portrait: "✨🐈",
@@ -526,9 +533,10 @@ const STORIES = [
     ],
     ending: "Du erwachst mit einem Kribbeln im Fell... etwas oder jemand ist ganz in deiner Nähe. 🐾 Die Reise geht weiter. Halte Ausschau nach dem nächsten Update."
   },
-    {
+  {
     id: 2,
     title: "Teil 3: Der Kampf gegen die dunkle Macht",
+    avatar: "🐈‍⬛",
     intro: {
       speaker: "Wermöwe",
       portrait: "🦅",
@@ -654,13 +662,105 @@ const STORIES = [
       }
     ],
     ending: "Du hast Schnurrstadt gerettet! 🏆 Die dunkle Macht hat ein neues Leben begonnen und alle Katzen sind in Sicherheit. Bis zum nächsten Abenteuer, Lilu! 🐾"
+  },
+  {
+    id: 3,
+    title: "Teil 4: Die Perle der Schwarzlippigen Auster",
+    avatar: "🐸",
+    intro: {
+      speaker: "Mr. Hopps",
+      portrait: "🐸🎩",
+      lines: [
+        "Guten Quak, Lilu! Ich komme mit einer wichtigen Nachricht von ganz oben.",
+        "Die Froschkönigin bekommt von ihrer Frau ein neues Zepter zum Geburtstag.",
+        "Dafür möchte sie die Perle einer Schwarzlippigen Auster haben.",
+        "Finde die Perle und bringe sie zur Princess Consort.",
+        "Am besten fragst du als erstes Quentin, der kennt sich hier aus."
+      ]
+    },
+    steps: [
+      {
+        quest: "Besuche Quentin in seinem Kaltwasser-Teich.",
+        dialogue: [
+          {speaker:"", portrait:"🦎🤠", text:"Ein Axolotl mit einem viel zu großen Sombrero auf dem Kopf kommt dir enthusiastisch entgegengeschwommen.", narr:true},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"¡Hola, mi amiga! ¿Cómo te puedo ayudar?"},
+          {speaker:"", portrait:"🐸", text:"Du schaust nur verwirrt. In der Schule hattest du nur Englisch und Französisch.", narr:true},
+          {speaker:"", portrait:"🐸", text:"Ein paar Wörter aus dem Polnischen, Griechischen oder Russischen hättest du auch noch auf Lager, aber das bringt dich hier nicht weiter.", narr:true},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Lo siento, ich habe gerade mit meiner Familie telefoniert und bin noch ganz español im Kopf."},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Wie kann ich dir behilflich sein?"}
+        ]
+      },
+      {
+        quest: "Erkläre Quentin dein Anliegen.",
+        dialogue: [
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Die Perle einer Schwarzlippigen Auster… das wird muy difícil."},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Ella es no laute Party-Muschel, sondern introvertiert, nachdenklich und muy sensibel."},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Sie liebt die silencio des Meeresbodens und lauscht stundenlang den traurigen Walgesängen."},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Bevor du ihre Perle bekommst, musst du dich mit ihr anfreunden…"},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Hol dir dafür Tipps von Gretchen, sie ist mit der Schwarzlippigen Auster damals zur Schule geschwommen."},
+          {speaker:"", portrait:"🗺️", text:"Quentin gibt dir eine Karte und zeichnet dir den Weg zu Hering Gretchen ein.", narr:true},
+          {speaker:"Quentin", portrait:"🦎🤠", text:"Vale. ¡Adiós y buena suerte!"}
+        ]
+      },
+      {
+        quest: "Folge der Karte und finde Gretchen.",
+        dialogue: [
+          {speaker:"", portrait:"🐸", text:"Brrrr. Es war schon echt kalt bei Quentin, aber hier wird es immer kälter.", narr:true},
+          {speaker:"", portrait:"🐸", text:"Warum musst du dich jetzt auch unbedingt mit Kaltwasserfischen treffen.", narr:true},
+          {speaker:"", portrait:"🐸", text:"Naja, lieber zu kalt, als zu warm.", narr:true},
+          {speaker:"", portrait:"🐸", text:"Du beschließt trotzdem, auf einem Seerosenblatt eine kurze Pause einzulegen.", narr:true},
+          {speaker:"", portrait:"☀️", text:"Ein paar Sonnenstrahlen wärmen dich und lassen deine Haut glitzern.", narr:true},
+          {speaker:"", portrait:"✨", text:"This is the skin of a killer, Bella.", narr:true},
+          {speaker:"", portrait:"❓", text:"Quack! Was machst du hier auf meinem Blatt?"},
+          {speaker:"", portrait:"🐸", text:"Aus Schreck verschluckst du dich an einer Fliege, die du dir gerade aus der Luft gesnackt hast.", narr:true}
+        ]
+      },
+      {
+        quest: "Huste dich aus. Nicht unterdrücken, sonst wird's nur schlimmer.",
+        dialogue: [
+          {speaker:"", portrait:"🐸", text:"Oh, das waren schon drei Huster. Vier, fünf… Langsam wird's unangenehm.", narr:true},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Ich helfe dir. Mach den Mund auf."},
+          {speaker:"", portrait:"🐸", text:"Du machst, was der unbekannte, gutaussehende und äußerst muskulöse Frosch dir sagt.", narr:true},
+          {speaker:"", portrait:"👅", text:"Plötzlich hast du eine fremde Zunge im Hals.", narr:true},
+          {speaker:"", portrait:"🐸", text:"Und dann kannst du wieder atmen.", narr:true},
+          {speaker:"", portrait:"🐸😎", text:"Sasha sitzt vor dir und kaut genüsslich auf der Fliege rum, die vorher in deinem Hals festgesteckt hat.", narr:true},
+          {speaker:"", portrait:"🐸😎", text:"Lecker.", narr:true},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Das hier ist eigentlich mein Spot."},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Aber da du gerade fast erstickt bist, darfst du eine Weile hierbleiben… Deine Haut passt gut zu der Farbe meines Seerosenblattes. *zwinker*"},
+          {speaker:"", portrait:"🐸", text:"Ihr sitzt zusammen auf dem Blatt und schaut über den Teich. Nebenbei fangt ihr ein paar Fliegen und verspeist sie genüsslich.", narr:true},
+          {speaker:"", portrait:"🪰", text:"Dann passiert das Unvermeidbare. Ihr visiert dieselbe Fliege an, welche aber getrost davonfliegt, da sich eure Zungen miteinander verknoten.", narr:true},
+          {speaker:"", portrait:"😳", text:"Oh oh.", narr:true}
+        ]
+      },
+      {
+        quest: "Das ist jetzt wirklich unangenehm. Du nach rechts, ah – nein, doch nach links! Oben drüber, ach Mist. Entwirre den Zungenknoten.",
+        dialogue: [
+          {speaker:"", portrait:"🐸", text:"Geschafft.", narr:true},
+          {speaker:"", portrait:"🐸", text:"Mittlerweile seid ihr nicht mehr grün, sondern komplett rot angelaufen.", narr:true},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Das können wir gerne mal wieder machen. *zwinker*"},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Hast du heute Abend schon was vor?"},
+          {speaker:"", portrait:"🐸", text:"Du erklärst, dass du eigentlich im königlichen Auftrag unterwegs bist und nur eine kleine Pause einlegen wolltest.", narr:true},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Ach, die Schwarzlippe schwimmt schon nicht weg."},
+          {speaker:"Sasha", portrait:"🐸😎", text:"Heute Abend gibt Quakwin Rosen ein Froschkonzert. Geh mit mir hin!"},
+          {speaker:"", portrait:"🐸", text:"Da du noch nie auf einem Konzert warst, sagst du direkt zu.", narr:true}
+        ]
+      },
+      {
+        quest: "Du hast spontan ein Date? Na gut, erst das Vergnügen, dann die Arbeit. Hüpfe mit Sasha zum Froschkonzert.",
+        dialogue: [
+          {speaker:"", portrait:"🐸", text:"Gemeinsam hüpft ihr los, während irgendwo am Meeresgrund eine ziemlich introvertierte Auster nichts von alldem ahnt.", narr:true}
+        ]
+      }
+    ],
+    ending: "Die Perle muss warten – heute Abend wird erstmal getanzt. 🎶 Wie es mit Sasha, dem Konzert und der Schwarzlippigen Auster weitergeht, erfährst du im nächsten Update."
   }
 
-  /* Beispiel für Teil 4 (später hier ergänzen, dann Datei neu hochladen/veröffentlichen).
-     Vor das neue Objekt gehört ein Komma hinter die schließende Klammer von Teil 3!
+  /* Beispiel für Teil 5 (später hier ergänzen, dann Datei neu hochladen/veröffentlichen).
+     Vor das neue Objekt gehört ein Komma hinter die schließende Klammer von Teil 4!
   ,{
-    id: 3,
-    title: "Teil 4: ...",
+    id: 4,
+    title: "Teil 5: ...",
+    avatar: "🐸",
     intro: { speaker:"...", portrait:"...", lines:["..."] },
     steps: [ { quest:"...", dialogue:[ {speaker:"...",portrait:"...",text:"..."} ] } ],
     ending: "..."
@@ -770,6 +870,16 @@ function isStoryComplete(idx){ return state.completed.includes(idx); }
 function render(){
   document.getElementById("greetingText").textContent = greeting();
   const story = currentStory();
+
+  // avatar (aendert sich je nach aktiver Geschichte, z.B. Katze -> Frosch)
+  const avatarEl = document.getElementById("catAvatar");
+  if(story && story.avatar){
+    avatarEl.textContent = story.avatar;
+  } else if(STORIES.length){
+    avatarEl.textContent = STORIES[STORIES.length - 1].avatar || "🐈‍⬛";
+  } else {
+    avatarEl.textContent = "🐈‍⬛";
+  }
 
   // goal pill
   document.getElementById("goalPillText").textContent = state.todayCount + "/" + state.dailyGoal;
@@ -978,7 +1088,7 @@ function advanceStory(){
     saveState();
     render();
     if(justCompleted){
-      // Erst das Ende der Geschichte zeigen; die nächste wird beim Klick auf den Button angeboten
+      // Erst das Ende der Geschichte zeigen; die naechste wird beim Klick auf den Button angeboten
       showEndingModal(story);
     } else {
       maybeOfferNextStory();
@@ -1009,7 +1119,9 @@ function showNextDialogueLine(storyIdx){
     return;
   }
   const line = currentDialogueQueue.shift();
-  document.getElementById("dialogPortrait").textContent = line.portrait || "🐈‍⬛";
+  const activeStory = STORIES[storyIdx];
+  const fallbackPortrait = (activeStory && activeStory.avatar) || "🐈‍⬛";
+  document.getElementById("dialogPortrait").textContent = line.portrait || fallbackPortrait;
   document.getElementById("dialogName").textContent = line.speaker || "";
   document.getElementById("dialogName").style.visibility = line.speaker ? "visible" : "hidden";
   const textEl = document.getElementById("dialogText");
